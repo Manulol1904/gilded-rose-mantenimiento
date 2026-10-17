@@ -157,7 +157,7 @@ Los avisos de pylint suben de 19 a 22 porque las funciones nuevas no tienen docs
 \end{figure}
 
 \section{Control de versiones}
-Repositorio público: \url{https://github.com/Manulol1904/gilded-rose-mantenimiento}. Rama \texttt{main}. La refactorización vivió en \texttt{refactor/gilded-rose}. La integración fue un merge \texttt{--no-ff}, commit \texttt{5dbd777}, mensaje \texttt{merge: integrar refactorización de GildedRose}, con dos padres. El tag \texttt{v1.0-refactor} apunta a ese merge. Figuras~\ref{fig:ramas} y~\ref{fig:grafo}.
+Repositorio público: \url{https://github.com/Manulol1904/gilded-rose-mantenimiento}. Rama \texttt{main}. La refactorización vivió en \texttt{refactor/gilded-rose}. La integración fue un merge \texttt{--no-ff}, commit \texttt{5dbd777}, mensaje \texttt{merge: integrar refactorización de GildedRose}, con dos padres. El tag \texttt{v1.0-refactor} apunta a ese merge. Figuras~\ref{fig:ramas} y~\ref{fig:grafo}. La página del repositorio y el listado de ramas están en las figuras~\ref{fig:github-repo} y~\ref{fig:github-ramas}.
 
 \begin{figure}[!htbp]
 \centering
@@ -173,19 +173,19 @@ Repositorio público: \url{https://github.com/Manulol1904/gilded-rose-mantenimie
 \label{fig:grafo}
 \end{figure}
 
-% \begin{figure}[!htbp]
-% \centering
-% \includegraphics[width=\textwidth]{imagenes/13_github_repo.png}
-% \caption{Captura manual de la página del repositorio en GitHub.}
-% \label{fig:github-repo}
-% \end{figure}
-%
-% \begin{figure}[!htbp]
-% \centering
-% \includegraphics[width=\textwidth]{imagenes/14_github_ramas.png}
-% \caption{Captura manual de las ramas en GitHub.}
-% \label{fig:github-ramas}
-% \end{figure}
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth,height=0.38\textheight,keepaspectratio]{imagenes/13_github_repo.png}
+\caption{Captura manual de la página del repositorio público en GitHub.}
+\label{fig:github-repo}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{imagenes/14_github_ramas.png}
+\caption{Captura manual de las ramas \texttt{main} y \texttt{refactor/gilded-rose} en GitHub.}
+\label{fig:github-ramas}
+\end{figure}
 
 \section{Pruebas y validación}
 unittest, 11 pruebas de regla y 2 de golden master. El ítem normal baja 1; vencido, baja 2; la calidad no pasa de 0 ni de 50; Aged Brie sube; Sulfuras no cambia; Backstage sube 1, 2 o 3 según le falten más de 10, 10 o menos, o 5 o menos días, y cae a 0 tras el concierto. ``Conjured Mana Cake'' baja 1, igual que un ítem normal. El golden master compara 5833 combinaciones y 40 días contra \texttt{tests/golden\_master.json}. \texttt{git diff} de ese archivo no tiene líneas (figura~\ref{fig:diff}). Antes y después, las 13 pruebas pasan (figuras~\ref{fig:test-antes} y~\ref{fig:test-despues}).
@@ -230,7 +230,7 @@ C2 Refactorización & Sección 3. Cinco técnicas, antes y después. El golden m
 \hline
 C3 Herramientas & Sección 4. Estática: pylint y lizard. Dinámica: coverage.py con ramas. \\
 \hline
-C4 Git & Sección 5, figuras~\ref{fig:ramas} y~\ref{fig:grafo}. Rama, commits atómicos, merge \texttt{5dbd777} y tag \texttt{v1.0-refactor}. \\
+C4 Git & Sección 5, figuras~\ref{fig:ramas}, \ref{fig:grafo}, \ref{fig:github-repo} y~\ref{fig:github-ramas}. Rama, commits atómicos, merge \texttt{5dbd777} y tag \texttt{v1.0-refactor}. \\
 \hline
 C5 Pruebas & Sección 6, figuras~\ref{fig:test-antes}, \ref{fig:test-despues} y~\ref{fig:diff}. Trece pruebas y diff vacío. \\
 \hline
