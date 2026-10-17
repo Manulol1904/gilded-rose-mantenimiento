@@ -1,0 +1,19 @@
+Comparacion tomada de evidencia/lizard_antes.txt, lizard_despues.txt, pylint_antes.txt, pylint_despues.txt, cobertura_antes.txt, cobertura_despues.txt, unittest_antes.txt y unittest_despues.txt.
+El diff de tests/golden_master.json esta vacio (evidencia/diff_golden_master.txt).
+
+Metrica | Antes | Despues
+update_quality NLOC | 29 | 3
+update_quality CCN | 19 | 2
+update_quality longitud | 29 | 3
+lizard AvgCCN total | 5.2 | 1.9
+lizard funciones sobre el umbral | 1 (update_quality) | 0
+pylint nota | 6.48/10 | 6.94/10
+pylint avisos de codigo | 19 | 22
+pylint too-many-branches | 18/12 en update_quality | no aparece
+pylint too-many-nested-blocks | 6/5, tres veces | no aparece
+cobertura lineas y ramas (Cover) | gilded_rose.py 36 stmts, 1 miss, 34 branch, 0 BrPart, 99% | total 54 stmts, 1 miss, 16 branch, 0 BrPart, 99%
+linea sin cubrir | gilded_rose.py:46 __repr__ | gilded_rose.py:23 __repr__
+pruebas unittest | 13, OK | 13, OK
+combinaciones del golden master | 5833 mas 40 dias | el mismo archivo, sin diff
+
+La nota de pylint sube 0.46 y desaparecen anidacion y exceso de ramas. El numero de avisos sube de 19 a 22 porque las funciones nuevas no tienen docstring y el import estrella de texttest_fixture ahora tambien marca actualizar_item. La cobertura sigue en 99%: la unica linea sin ejecutar es __repr__. Las ramas bajan de 34 a 16 porque el codigo duplicado ya no existe, no porque las pruebas recorran menos reglas.
