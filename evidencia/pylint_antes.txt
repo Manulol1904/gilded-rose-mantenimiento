@@ -1,0 +1,29 @@
+************* Module gilded_rose
+gilded_rose.py:10:0: C0301: Line too long (101/100) (line-too-long)
+gilded_rose.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+gilded_rose.py:3:0: C0115: Missing class docstring (missing-class-docstring)
+gilded_rose.py:3:0: R0205: Class 'GildedRose' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)
+gilded_rose.py:8:4: C0116: Missing function or method docstring (missing-function-docstring)
+gilded_rose.py:10:15: R1714: Consider merging these comparisons with 'in' by using 'item.name not in ('Aged Brie', 'Backstage passes to a TAFKAL80ETC concert')'. Use a set instead if elements are hashable. (consider-using-in)
+gilded_rose.py:9:8: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)
+gilded_rose.py:9:8: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)
+gilded_rose.py:9:8: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)
+gilded_rose.py:8:4: R0912: Too many branches (18/12) (too-many-branches)
+gilded_rose.py:3:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+gilded_rose.py:39:0: C0115: Missing class docstring (missing-class-docstring)
+gilded_rose.py:46:15: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+gilded_rose.py:39:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+************* Module texttest_fixture
+texttest_fixture.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+texttest_fixture.py:4:0: W0401: Wildcard import gilded_rose (wildcard-import)
+texttest_fixture.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
+texttest_fixture.py:21:4: C0415: Import outside toplevel (sys) (import-outside-toplevel)
+texttest_fixture.py:25:14: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+
+-----------------------------------
+Your code has been rated at 6.48/10
+
+C:\Users\manul\AppData\Local\Programs\Python\Python312\Lib\site-packages\pylint\__init__.py:34: ReporterWarning: Both NO_COLOR and FORCE_COLOR are set! (disabling colors)
+  PylintRun(argv or sys.argv[1:])
+
+EXIT=28

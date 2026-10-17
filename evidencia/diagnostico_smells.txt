@@ -1,0 +1,12 @@
+Diagnostico estatico del codigo original (gilded_rose.py y texttest_fixture.py).
+Herramientas: pylint 4.1.3 (nota 6.48/10, EXIT=28) y lizard 1.24.1 con -C 10 -L 50 (EXIT=1).
+pylint no tiene un detector de clones ni marca numeros magicos con la configuracion por defecto.
+lizard marca update_quality por CCN 19; su longitud es 29 y no supera el umbral de 50.
+
+Smell | Ubicacion | Evidencia | Por que es problema | Tecnica
+Metodo largo y con demasiadas ramas | gilded_rose.py update_quality, lineas 8-36 | lizard: NLOC 29, CCN 19, longitud 29. pylint R0912: 18 ramas (umbral 12) en la linea 8 | Un solo metodo concentra todas las reglas. Un cambio de negocio obliga a leer y tocar el bloque entero | Extraer metodo y despacho por tipo
+Condicionales anidados | gilded_rose.py lineas 9-36, anidacion desde la linea 9 | pylint R1702: too many nested blocks (6/5), reportado tres veces sobre la linea 9 | El anidamiento esconde el caso de cada producto y facilita un fallo al cambiar una rama | Clausulas de guarda y retorno temprano
+Numeros magicos | 0, 1, 50, 11 y 6 en las lineas 11, 13, 15, 18, 21, 26, 29 y 35 | pylint no emitio magic-value-comparison. Se sostiene por inspeccion del codigo | El 11 y el 6 no dicen que son los umbrales de los pases de backstage | Constantes con nombre
+Cadenas magicas repetidas | "Aged Brie" lineas 10 y 27; "Backstage passes to a TAFKAL80ETC concert" lineas 10, 17 y 28; "Sulfuras, Hand of Ragnaros" lineas 12, 24 y 30 | pylint R1714 solo sugiere unir dos comparaciones con in en la linea 10. La repeticion se ve por inspeccion | Un error de tipeo en una copia deja una regla fuera | Constantes con nombre
+Codigo duplicado al subir o bajar calidad | quality - 1 en lineas 13 y 31; quality + 1 en lineas 16, 20, 23 y 36; tope 50 repetido | No hay detector de clones en pylint ni en lizard. Duplicacion por inspeccion | El limite 0 y el limite 50 se pueden olvidar en una de las copias | Extraer metodos de subir y bajar calidad
+Obsesion por primitivos | El tipo de producto es la cadena item.name, comparada en todo update_quality | Ninguna de las dos herramientas lo nombra. Inspeccion de las comparaciones de las lineas 10, 12, 17, 24, 27, 28 y 30 | Cada producto nuevo alarga el mismo condicional | Reemplazar condicional por estrategia, sin modificar la clase Item
