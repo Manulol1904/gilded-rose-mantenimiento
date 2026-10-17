@@ -1,3 +1,4 @@
-* main                 aa68440 [origin/main: ahead 12] docs: describir el kata, las pruebas y las herramientas
-  refactor/gilded-rose bbcc41d test: registrar la validacion posterior a la refactorizacion
-  remotes/origin/main  be55f42 docs: registrar el entorno y el conteo de lineas del codigo original
+* main                                f95d636 [origin/main] docs: guardar el grafo de git tras integrar la refactorizacion
+  refactor/gilded-rose                bbcc41d test: registrar la validacion posterior a la refactorizacion
+  remotes/origin/main                 f95d636 docs: guardar el grafo de git tras integrar la refactorizacion
+  remotes/origin/refactor/gilded-rose bbcc41d test: registrar la validacion posterior a la refactorizacion

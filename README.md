@@ -40,6 +40,8 @@ python -m coverage report -m
 | Dinámica | coverage.py 7.16.2 con ramas |
 | Pruebas | unittest |
 
+El informe está en `informe/main.pdf` (7 páginas).
+
 ## Repositorio
 
 https://github.com/Manulol1904/gilded-rose-mantenimiento

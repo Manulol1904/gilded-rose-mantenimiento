@@ -1,7 +1,8 @@
-* aa68440 (HEAD -> main) docs: describir el kata, las pruebas y las herramientas
-*   5dbd777 (tag: v1.0-refactor) merge: integrar refactorizaciÃ³n de GildedRose
+* f95d636 (HEAD -> main, origin/main) docs: guardar el grafo de git tras integrar la refactorizacion
+* aa68440 docs: describir el kata, las pruebas y las herramientas
+*   5dbd777 (tag: v1.0-refactor) merge: integrar refactorización de GildedRose
 |\  
-| * bbcc41d (refactor/gilded-rose) test: registrar la validacion posterior a la refactorizacion
+| * bbcc41d (origin/refactor/gilded-rose, refactor/gilded-rose) test: registrar la validacion posterior a la refactorizacion
 | * 93ce237 refactor: reemplazar el condicional por un despacho de estrategias
 | * 8bdeedf refactor: simplificar condicionales con clausulas de guarda
 | * 31b7615 refactor: extraer _update_item y un metodo por tipo de producto
@@ -12,5 +13,5 @@
 * a17fc35 docs: registrar diagnostico estatico previo a la refactorizacion
 * b48451d test: agregar pruebas unitarias por regla de negocio
 * 31bcbdd test: agregar golden master del comportamiento original
-* be55f42 (origin/main) docs: registrar el entorno y el conteo de lineas del codigo original
-* 37e2f2f chore: importar cÃ³digo original de GildedRose Kata (Emily Bache)
+* be55f42 docs: registrar el entorno y el conteo de lineas del codigo original
+* 37e2f2f chore: importar código original de GildedRose Kata (Emily Bache)
