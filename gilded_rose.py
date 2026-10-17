@@ -27,26 +27,29 @@ class GildedRose(object):
             self._update_item(item)
 
     def _update_item(self, item):
+        if item.name == SULFURAS:
+            return
         if item.name == AGED_BRIE:
             self._actualizar_brie(item)
-        elif item.name == BACKSTAGE_PASSES:
+            return
+        if item.name == BACKSTAGE_PASSES:
             self._actualizar_backstage(item)
-        elif item.name == SULFURAS:
-            self._actualizar_sulfuras(item)
-        else:
-            self._actualizar_normal(item)
+            return
+        self._actualizar_normal(item)
 
     def _actualizar_normal(self, item):
         self._bajar_calidad(item)
         item.sell_in = item.sell_in - 1
-        if item.sell_in < MIN_QUALITY:
-            self._bajar_calidad(item)
+        if item.sell_in >= MIN_QUALITY:
+            return
+        self._bajar_calidad(item)
 
     def _actualizar_brie(self, item):
         self._subir_calidad(item)
         item.sell_in = item.sell_in - 1
-        if item.sell_in < MIN_QUALITY:
-            self._subir_calidad(item)
+        if item.sell_in >= MIN_QUALITY:
+            return
+        self._subir_calidad(item)
 
     def _actualizar_backstage(self, item):
         self._subir_calidad(item)
@@ -55,11 +58,9 @@ class GildedRose(object):
         if item.sell_in < UMBRAL_BACKSTAGE_TRIPLE:
             self._subir_calidad(item)
         item.sell_in = item.sell_in - 1
-        if item.sell_in < MIN_QUALITY:
-            item.quality = item.quality - item.quality
-
-    def _actualizar_sulfuras(self, item):
-        return
+        if item.sell_in >= MIN_QUALITY:
+            return
+        item.quality = item.quality - item.quality
 
 
 class Item:
