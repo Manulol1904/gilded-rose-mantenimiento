@@ -1,0 +1,16 @@
+Comando: coverage run --branch --source=gilded_rose,actualizadores -m unittest discover -s tests
+.............
+----------------------------------------------------------------------
+Ran 13 tests in 0.098s
+
+OK
+
+Name                Stmts   Miss Branch BrPart  Cover   Missing
+---------------------------------------------------------------
+actualizadores.py      40      0     14      0   100%
+gilded_rose.py         14      1      2      0    94%   23
+---------------------------------------------------------------
+TOTAL                  54      1     16      0    99%
+
+RUN_EXIT=0
+REPORT_EXIT=0

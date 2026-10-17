@@ -1,0 +1,23 @@
+git diff -- tests/golden_master.json
+(sin diferencias)
+
+DIFF_EXIT=0
+El archivo no se regenero en la rama de refactor.
+test_simulacion_de_40_dias_coincide (test_golden_master.GoldenMaster.test_simulacion_de_40_dias_coincide) ... ok
+test_todas_las_combinaciones_coinciden (test_golden_master.GoldenMaster.test_todas_las_combinaciones_coinciden) ... ok
+test_aged_brie_sube_la_calidad (test_reglas.ReglasDeNegocio.test_aged_brie_sube_la_calidad) ... ok
+test_backstage_cae_a_cero_tras_el_concierto (test_reglas.ReglasDeNegocio.test_backstage_cae_a_cero_tras_el_concierto) ... ok
+test_backstage_sube_dos_si_faltan_10_dias_o_menos (test_reglas.ReglasDeNegocio.test_backstage_sube_dos_si_faltan_10_dias_o_menos) ... ok
+test_backstage_sube_tres_si_faltan_5_dias_o_menos (test_reglas.ReglasDeNegocio.test_backstage_sube_tres_si_faltan_5_dias_o_menos) ... ok
+test_backstage_sube_uno_si_faltan_mas_de_10_dias (test_reglas.ReglasDeNegocio.test_backstage_sube_uno_si_faltan_mas_de_10_dias) ... ok
+test_calidad_no_supera_50 (test_reglas.ReglasDeNegocio.test_calidad_no_supera_50) ... ok
+test_calidad_nunca_es_negativa (test_reglas.ReglasDeNegocio.test_calidad_nunca_es_negativa) ... ok
+test_conjured_se_comporta_como_item_normal (test_reglas.ReglasDeNegocio.test_conjured_se_comporta_como_item_normal) ... ok
+test_item_normal_baja_calidad_en_uno (test_reglas.ReglasDeNegocio.test_item_normal_baja_calidad_en_uno) ... ok
+test_item_vencido_baja_calidad_en_dos (test_reglas.ReglasDeNegocio.test_item_vencido_baja_calidad_en_dos) ... ok
+test_sulfuras_no_cambia (test_reglas.ReglasDeNegocio.test_sulfuras_no_cambia) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.030s
+
+OK
