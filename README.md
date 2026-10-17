@@ -1,39 +1,47 @@
-# Gilded Rose starting position in Python
+# Mantenimiento de Gilded Rose
 
-For exercise instructions see [top level README](../README.md)
+Inventario de la tienda Gilded Rose, usado como componente análogo al sistema de ConstruYA: una regla de negocio nueva es una solicitud de cambio. El código parte del kata de Emily Bache, versión Python:
 
-Suggestion: create a python virtual environment for this project. See the [documentation](https://docs.python.org/3/library/venv.html)
+https://github.com/emilybache/GildedRose-Refactoring-Kata
 
-## Run the unit tests from the Command-Line
+La licencia original está en `LICENSE`. La clase `Item` y la propiedad `items` no se modifican. Un ítem cuyo nombre empieza por "Conjured" sigue comportándose como uno normal; esa regla no se implementó.
 
-```
-python -m unittest
-```
+El código de producción que no es prueba suma 80 líneas (`gilded_rose.py` 46 y `texttest_fixture.py` 34). El detalle está en `evidencia/conteo_lineas.txt`.
 
-## Run the TextTest fixture from the Command-Line
+## Estructura
 
-For e.g. 10 days:
+- `gilded_rose.py`: clases `GildedRose` e `Item`.
+- `actualizadores.py`: estrategias por tipo de producto.
+- `texttest_fixture.py`: simulación de varios días, tomada del kata.
+- `tests/`: golden master y pruebas de cada regla.
+- `evidencia/`: salidas de pylint, lizard, coverage y unittest.
+- `informe/`: informe técnico en LaTeX.
 
-```
-python texttest_fixture.py 10
-```
-
-You should make sure the command shown above works when you execute it in a terminal before trying to use TextTest (see below).
-
-
-## Run the TextTest approval test that comes with this project
-
-There are instructions in the [TextTest Readme](../texttests/README.md) for setting up TextTest. You will need to specify the Python executable and interpreter in [config.gr](../texttests/config.gr). Uncomment these lines:
-
-    executable:${TEXTTEST_HOME}/python/texttest_fixture.py
-    interpreter:python
-
-## Run the ApprovalTests.Python test
-
-This test uses the framework [ApprovalTests.Python](https://github.com/approvals/ApprovalTests.Python). You will need to install  Run it like this:
+## Pruebas
 
 ```
-python tests/test_gilded_rose_approvals.py
+python -m unittest discover -s tests -v
 ```
 
-You will need to approve the output file which appears under "approved_files" by renaming it from xxx.received.txt to xxx.approved.txt.
+El golden master se generó una vez con `python tests/generar_golden_master.py` y no se vuelve a generar.
+
+## Cobertura
+
+```
+python -m coverage run --branch --source=gilded_rose,actualizadores -m unittest discover -s tests
+python -m coverage report -m
+```
+
+## Herramientas
+
+| Uso | Herramienta |
+| --- | --- |
+| Estática | pylint 4.1.3 y lizard 1.24.1 (`lizard -C 10 -L 50`) |
+| Dinámica | coverage.py 7.16.2 con ramas |
+| Pruebas | unittest |
+
+## Repositorio
+
+https://github.com/Manulol1904/gilded-rose-mantenimiento
+
+La refactorización está en la rama `refactor/gilded-rose`. El merge a `main` es el tag `v1.0-refactor`.
