@@ -1,0 +1,4 @@
+gilded_rose.py: 46
+texttest_fixture.py: 34
+Total codigo no de pruebas: 80
+Archivos: gilded_rose.py y texttest_fixture.py. Las pruebas no entran en el conteo.
