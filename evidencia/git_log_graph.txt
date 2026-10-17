@@ -1,0 +1,16 @@
+* aa68440 (HEAD -> main) docs: describir el kata, las pruebas y las herramientas
+*   5dbd777 (tag: v1.0-refactor) merge: integrar refactorizaciÃ³n de GildedRose
+|\  
+| * bbcc41d (refactor/gilded-rose) test: registrar la validacion posterior a la refactorizacion
+| * 93ce237 refactor: reemplazar el condicional por un despacho de estrategias
+| * 8bdeedf refactor: simplificar condicionales con clausulas de guarda
+| * 31b7615 refactor: extraer _update_item y un metodo por tipo de producto
+| * 3ba7930 refactor: extraer metodos para subir y bajar la calidad con limites
+| * 3d5292e refactor: reemplazar cadenas y numeros magicos por constantes con nombre
+|/  
+* cb2c947 test: registrar la cobertura dinamica previa a la refactorizacion
+* a17fc35 docs: registrar diagnostico estatico previo a la refactorizacion
+* b48451d test: agregar pruebas unitarias por regla de negocio
+* 31bcbdd test: agregar golden master del comportamiento original
+* be55f42 (origin/main) docs: registrar el entorno y el conteo de lineas del codigo original
+* 37e2f2f chore: importar cÃ³digo original de GildedRose Kata (Emily Bache)

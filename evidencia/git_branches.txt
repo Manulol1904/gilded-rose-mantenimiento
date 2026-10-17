@@ -1,0 +1,3 @@
+* main                 aa68440 [origin/main: ahead 12] docs: describir el kata, las pruebas y las herramientas
+  refactor/gilded-rose bbcc41d test: registrar la validacion posterior a la refactorizacion
+  remotes/origin/main  be55f42 docs: registrar el entorno y el conteo de lineas del codigo original
