@@ -1,0 +1,142 @@
+diff --git a/gilded_rose.py b/gilded_rose.py
+index e04f2e8..707c916 100644
+--- a/gilded_rose.py
++++ b/gilded_rose.py
+@@ -1,11 +1,5 @@
+ # -*- coding: utf-8 -*-
+ 
+-AGED_BRIE = "Aged Brie"
+-SULFURAS = "Sulfuras, Hand of Ragnaros"
+-BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert"
+-MIN_QUALITY = 0
+-MAX_QUALITY = 50
+-UMBRAL_BACKSTAGE_DOBLE = 11
+-UMBRAL_BACKSTAGE_TRIPLE = 6
++from actualizadores import actualizar_item
+ 
+ 
+@@ -15,51 +9,7 @@ class GildedRose(object):
+         self.items = items
+ 
+-    def _bajar_calidad(self, item):
+-        if item.quality > MIN_QUALITY:
+-            item.quality = item.quality - 1
+-
+-    def _subir_calidad(self, item):
+-        if item.quality < MAX_QUALITY:
+-            item.quality = item.quality + 1
+-
+     def update_quality(self):
+         for item in self.items:
+-            self._update_item(item)
+-
+-    def _update_item(self, item):
+-        if item.name == SULFURAS:
+-            return
+-        if item.name == AGED_BRIE:
+-            self._actualizar_brie(item)
+-            return
+-        if item.name == BACKSTAGE_PASSES:
+-            self._actualizar_backstage(item)
+-            return
+-        self._actualizar_normal(item)
+-
+-    def _actualizar_normal(self, item):
+-        self._bajar_calidad(item)
+-        item.sell_in = item.sell_in - 1
+-        if item.sell_in >= MIN_QUALITY:
+-            return
+-        self._bajar_calidad(item)
+-
+-    def _actualizar_brie(self, item):
+-        self._subir_calidad(item)
+-        item.sell_in = item.sell_in - 1
+-        if item.sell_in >= MIN_QUALITY:
+-            return
+-        self._subir_calidad(item)
+-
+-    def _actualizar_backstage(self, item):
+-        self._subir_calidad(item)
+-        if item.sell_in < UMBRAL_BACKSTAGE_DOBLE:
+-            self._subir_calidad(item)
+-        if item.sell_in < UMBRAL_BACKSTAGE_TRIPLE:
+-            self._subir_calidad(item)
+-        item.sell_in = item.sell_in - 1
+-        if item.sell_in >= MIN_QUALITY:
+-            return
+-        item.quality = item.quality - item.quality
++            actualizar_item(item)
+ 
+ 
+
+--- actualizadores.py ---
+# -*- coding: utf-8 -*-
+
+AGED_BRIE = "Aged Brie"
+SULFURAS = "Sulfuras, Hand of Ragnaros"
+BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert"
+MIN_QUALITY = 0
+MAX_QUALITY = 50
+UMBRAL_BACKSTAGE_DOBLE = 11
+UMBRAL_BACKSTAGE_TRIPLE = 6
+
+
+def bajar_calidad(item):
+    if item.quality > MIN_QUALITY:
+        item.quality = item.quality - 1
+
+
+def subir_calidad(item):
+    if item.quality < MAX_QUALITY:
+        item.quality = item.quality + 1
+
+
+def actualizar_normal(item):
+    bajar_calidad(item)
+    item.sell_in = item.sell_in - 1
+    if item.sell_in >= MIN_QUALITY:
+        return
+    bajar_calidad(item)
+
+
+def actualizar_brie(item):
+    subir_calidad(item)
+    item.sell_in = item.sell_in - 1
+    if item.sell_in >= MIN_QUALITY:
+        return
+    subir_calidad(item)
+
+
+def actualizar_backstage(item):
+    subir_calidad(item)
+    if item.sell_in < UMBRAL_BACKSTAGE_DOBLE:
+        subir_calidad(item)
+    if item.sell_in < UMBRAL_BACKSTAGE_TRIPLE:
+        subir_calidad(item)
+    item.sell_in = item.sell_in - 1
+    if item.sell_in >= MIN_QUALITY:
+        return
+    item.quality = item.quality - item.quality
+
+
+def actualizar_sulfuras(_item):
+    return
+
+
+DESPACHO = {
+    AGED_BRIE: actualizar_brie,
+    BACKSTAGE_PASSES: actualizar_backstage,
+    SULFURAS: actualizar_sulfuras,
+}
+
+
+def actualizar_item(item):
+    DESPACHO.get(item.name, actualizar_normal)(item)
+
+.............
+----------------------------------------------------------------------
+Ran 13 tests in 0.035s
+
+OK
+
+EXIT=0
